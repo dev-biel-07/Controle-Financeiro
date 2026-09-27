@@ -1,10 +1,10 @@
-# 💰 Controle Financeiro API
+# Controle Financeiro API
 
-API REST para gerenciar gastos pessoais, com autenticação de usuários, categorias e relatórios — construída com **FastAPI** e **SQLAlchemy**.
+API REST para gerenciar gastos pessoais, com autenticação de usuários, categorias e relatórios — construída com FastAPI e SQLAlchemy.
 
 Projeto pessoal feito para praticar (e mostrar) desenvolvimento backend com Python: modelagem de dados, autenticação JWT, testes automatizados e boas práticas de organização de código.
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - Cadastro e login de usuários com senha criptografada (bcrypt)
 - Autenticação via **JWT** (JSON Web Token)
@@ -15,7 +15,7 @@ Projeto pessoal feito para praticar (e mostrar) desenvolvimento backend com Pyth
 - Documentação interativa automática (Swagger UI)
 - Testes automatizados cobrindo os principais fluxos
 
-## 🛠️ Stack
+## Stack
 
 - **FastAPI** — framework web
 - **SQLAlchemy** — ORM
@@ -24,7 +24,7 @@ Projeto pessoal feito para praticar (e mostrar) desenvolvimento backend com Pyth
 - **passlib (bcrypt)** — hash de senhas
 - **pytest** — testes automatizados
 
-## 📂 Estrutura do projeto
+## Estrutura do projeto
 
 ```
 finance-tracker/
@@ -44,7 +44,7 @@ finance-tracker/
 └── requirements.txt
 ```
 
-## 🚀 Como rodar
+## Como rodar
 
 ```bash
 # 1. Clone o repositório
@@ -64,13 +64,13 @@ uvicorn app.main:app --reload
 
 Acesse **http://localhost:8000/docs** para ver a documentação interativa e testar os endpoints direto do navegador.
 
-## 🧪 Rodando os testes
+## Rodando os testes
 
 ```bash
 pytest -v
 ```
 
-## 📡 Principais endpoints
+## Principais endpoints
 
 | Método | Rota                        | Descrição                          | Autenticado |
 |--------|-----------------------------|-------------------------------------|:-----------:|
@@ -83,18 +83,3 @@ pytest -v
 | DELETE | `/expenses/{id}`               | Remove um gasto                   | Sim |
 | GET    | `/expenses/report/by-category` | Total gasto por categoria         | Sim |
 
-## 🔮 Próximos passos (ideias para evoluir o projeto)
-
-- [ ] Editar gastos existentes (endpoint PUT)
-- [ ] Filtrar gastos por período (mês/ano)
-- [ ] Definir metas de gasto mensal por categoria
-- [ ] Exportar relatório em PDF ou CSV
-- [ ] Deploy em produção (Render/Railway) com PostgreSQL
-- [ ] Frontend simples em React ou HTML+JS consumindo a API
-
-## 📝 Decisões técnicas (para falar na entrevista)
-
-- **FastAPI** em vez de Flask: tipagem nativa com Pydantic, documentação automática (Swagger) e melhor performance assíncrona.
-- **JWT** em vez de sessão: API fica stateless, o que facilita escalar horizontalmente no futuro.
-- **SQLite** para desenvolvimento: zero configuração; a troca para PostgreSQL é só mudar a `DATABASE_URL`, já que o SQLAlchemy abstrai o banco.
-- **Separação em camadas** (`routers` / `crud` / `models` / `schemas`): deixa o código testável e organizado, evitando lógica de negócio misturada com a definição das rotas HTTP.
